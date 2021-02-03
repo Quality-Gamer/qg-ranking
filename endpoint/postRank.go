@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"github.com/labstack/echo"
 	"net/http"
-	"strconv"
 	"qg-ranking/model"
+	"strconv"
 )
 
 func PostRank(c echo.Context) error {
@@ -17,9 +17,15 @@ func PostRank(c echo.Context) error {
 		uid := c.FormValue("user_id")
 		score, _ := strconv.Atoi(c.FormValue("score"))
 		rank := model.GetRank()
-		rank.RankMember(uid, score)
+		pos := rank.GetRank(uid)
+		u := rank.GetMemberByRank(pos)
+		newScore := u.Score + score
+		r, _ := rank.RankMember(uid, newScore)
 		res.Status = "OK"
 		res.Message = "success"
+		var generic model.Res
+		generic.Rank = append(generic.Rank,r)
+		res.Response = generic
 		c.Response().WriteHeader(http.StatusOK)
 		return json.NewEncoder(c.Response()).Encode(res)
 	} else {

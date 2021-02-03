@@ -20,7 +20,7 @@ func GetRank(c echo.Context) error {
 		res.Status = "OK"
 		res.Message = "success"
 		res.Response.Total = rank.TotalMembers()
-		res.Response.Rank = append(res.Response.Rank,leaders)
+		res.Response.Rank = leaders
 		c.Response().WriteHeader(http.StatusOK)
 		return json.NewEncoder(c.Response()).Encode(res)
 	} else {

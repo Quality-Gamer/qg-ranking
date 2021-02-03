@@ -1,6 +1,6 @@
 package model
 
-import "github.com/cheekybits/genny/generic"
+import "github.com/dayvson/go-leaderboard"
 
 type Response struct {
 	Status   string `json:"status"`
@@ -9,6 +9,6 @@ type Response struct {
 }
 
 type Res struct {
-	Rank  []generic.Type `json:"rank"`
+	Rank  []leaderboard.User `json:"rank"`
 	Total int            `json:"total"`
 }
