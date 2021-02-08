@@ -5,7 +5,7 @@ import (
 	"github.com/labstack/echo"
 	"net/http"
 	"strconv"
-	"qg-ranking/model"
+	"github.com/Quality-Gamer/qg-ranking/model"
 )
 
 func GetRank(c echo.Context) error {

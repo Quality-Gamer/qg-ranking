@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/labstack/echo"
 	"net/http"
-	"qg-ranking/model"
+	"github.com/Quality-Gamer/qg-ranking/model"
 	"strconv"
 )
 
