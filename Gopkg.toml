@@ -40,3 +40,9 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[metadata.heroku]
+    root-package = "github.com/Quality-Gamer/qg-ranking"
+    install = [ "./..." ]
+    go-version = "go1.12.7"
+
