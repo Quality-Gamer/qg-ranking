@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/labstack/echo"
 	"os"
-	"qg-ranking/endpoint"
+	"github.com/Quality-Gamer/qg-ranking/endpoint"
 )
 
 //main contains all API endpoints
